@@ -1,5 +1,4 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -10,9 +9,7 @@ import csv
 import math
 import re
 import random
-options = Options()
-options.headless = True
-driver = webdriver.Chrome("/usr/bin/chromedriver", options=options)
+driver = webdriver.Chrome(options=[('headless', True)])
 #driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
 driver.set_window_size(1920, 1080)
 
