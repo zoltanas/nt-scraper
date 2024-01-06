@@ -9,7 +9,8 @@ import csv
 import math
 import re
 import random
-driver = webdriver.Chrome(options=[('headless', True)])
+options = {'headless': True}
+driver = webdriver.Chrome(options=options)
 #driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
 driver.set_window_size(1920, 1080)
 
