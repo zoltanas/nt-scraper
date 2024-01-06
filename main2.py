@@ -9,7 +9,7 @@ import csv
 import math
 import re
 import random
-driver = webdriver.Chrome()
+driver = webdriver.Chrome("/usr/local/bin/chromedriver")
 driver.set_window_size(1920, 1080)
 
 #Random times between actions, so it looks like human)
