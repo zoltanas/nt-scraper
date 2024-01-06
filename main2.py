@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -9,8 +10,6 @@ import csv
 import math
 import re
 import random
-driver = webdriver.Chrome("/usr/local/bin/chromedriver")
-driver.set_window_size(1920, 1080)
 
 #Random times between actions, so it looks like human)
 def random_sleep():
@@ -18,6 +17,14 @@ def random_sleep():
     time.sleep(_sleep)
 
 def setup():
+    service = Service('/usr/bin/chromedriver')
+    options = webdriver.ChromeOptions()
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument('--headless')
+    options.add_argument('--disable-gpu')
+    options.add_argument('--window-size=1920,1080')
+    driver = webdriver.Chrome(service=service, options=options)
     driver.get("https://en.aruodas.lt/butai/")
     # driver.get("https://en.aruodas.lt/namai/")
     WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.XPATH, '//button[text()="Sutinku"]'))).click()
