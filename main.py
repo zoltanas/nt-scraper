@@ -29,7 +29,7 @@ def random_sleep():
 def setup():
     driver.get("https://en.aruodas.lt/butai/")
     # driver.get("https://en.aruodas.lt/namai/")
-    WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.XPATH, '//button[text()="Sutinku"]'))).click()
+    WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, '//button[text()="Sutinku"]'))).click()
     random_sleep()
 
 def adclicker():
