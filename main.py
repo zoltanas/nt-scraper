@@ -10,8 +10,16 @@ import math
 import re
 import random
 
+# Specify the Chrome driver version to download
+driver_version = '94.0.4606.114'
+
+# Install the Chrome driver
+ChromeDriverManager(version=driver_version).install()
+
+# Create the Chrome WebDriver instance
 driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
-driver.set_window_size(1920, 1080)
+# driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
+# driver.set_window_size(1920, 1080)
 
 #Random times between actions, so it looks like human)
 def random_sleep():
