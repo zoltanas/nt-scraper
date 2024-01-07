@@ -29,8 +29,10 @@ def random_sleep():
 def setup():
     driver.get("https://en.aruodas.lt/butai/")
     # driver.get("https://en.aruodas.lt/namai/")
-    WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, '//button[text()="Sutinku"]'))).click()
+    time.sleep(5)
+    #WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.XPATH, '//button[text()="Sutinku"]'))).click()
     random_sleep()
+    driver.find_element(By.XPATH, '//button[text()="Sutinku"]').click()
 
 def adclicker():
     num_apartments = 100
