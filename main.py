@@ -10,11 +10,8 @@ import math
 import re
 import random
 
-# Specify the Chrome driver version to download
-driver_version = '94.0.4606.114'
-
 # Install the Chrome driver
-ChromeDriverManager(version=driver_version).install()
+ChromeDriverManager().install()
 
 # Create the Chrome WebDriver instance
 driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
